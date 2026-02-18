@@ -16,27 +16,39 @@ namespace ImuiBepInEx
         /// with a gameobject as a child, this gameobject contains a backend (necessary for rendering)
         /// </summary>
         /// <param name="onAssetLoad">Callback thats called once the assets are loaded</param>
-        public static void Initalize(Action onAssetLoad = null)
+        public static void Initialize(Action onAssetLoad = null)
         {
-            AssetsManager.Initalize(() =>
+            AssetsManager.Initialize(() =>
             {
                 onAssetLoad?.Invoke();
-
-                mainCanvas = Utility.CreateCanvasObject();
-                if (mainCanvas != null)
-                {
-                    mainBackend = Utility.CreateImuiObject();
-                }
             });
         }
 
         public static GameObject GetMainCanvas()
         {
+            if (mainCanvas == null)
+                mainCanvas = Utility.CreateCanvasObject();
+
             return mainCanvas;
         }
 
         public static ImuiUnityGUIBackend GetMainBackend()
         {
+            if (mainCanvas == null)
+            {
+                mainCanvas = Utility.CreateCanvasObject();
+                if (mainCanvas != null)
+                {
+                    mainBackend = Utility.CreateImuiObject(mainCanvas.transform);
+                    return mainBackend;
+                }
+
+                return null;
+            }
+
+            if (mainBackend == null)
+                mainBackend = Utility.CreateImuiObject(mainCanvas.transform);
+
             return mainBackend;
         }
     }

@@ -14,7 +14,7 @@ namespace ImuiBepInEx
         private static AssetBundle? _bundle = null;
         public static bool AssetBundleLoaded = false;
 
-        public static void Initalize(Action onLoaded = null)
+        public static void Initialize(Action onLoaded = null)
         {
             Debug.Log("Loading Imui assets");
 
