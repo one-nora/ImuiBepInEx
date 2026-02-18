@@ -53,7 +53,7 @@ If you are having issues with the bundle, then you may need to rebuild it.
 3. Go to Window -> Raw Asset Bundle Exporter
 4. Write "imuiassetbundle" in bundles to build, then click on "Open export folder" and select the "ImuiBepInEx/Assets/" folder.
 5. Click on "Build raw asset bundles", once it finishes exporting go back to "ImuiBepInEx/Assets/"
-6. Remove any file that isnt named "imui", there should only remain 1 file.
+6. Remove any file that isnt named "ImuiAssetBundle", there should only remain 1 file.
 7. Done!
 
 # Examples of use
@@ -85,6 +85,6 @@ If you want to update the assets, its the same as before, only that now instead 
 	5.1 If you don't see this tab, remember to add the "UnityAssets/Editor/RawBundleExporter.cs" script into "Assets/Editor"
 6. Write "imuiassetbundle" in bundles to build, then click on "Open export folder" and select the "ImuiBepInEx/Assets/" folder.
 5. Click on "Build raw asset bundles", once it finishes exporting go back to "ImuiBepInEx/Assets/"
-6. Remove any file that isnt named "imui", there should only remain 1 file.
+6. Remove any file that isnt named "ImuiAssetBundle", there should only remain 1 file.
 7. Done!
 
