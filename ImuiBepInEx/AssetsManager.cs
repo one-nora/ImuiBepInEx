@@ -7,7 +7,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ImuiBepInEx.API
+namespace ImuiBepInEx
 {
     internal static class AssetsManager
     {
