@@ -71,6 +71,7 @@ Well, here's how.
 3. Paste them into the project.
 4. Open the project, it's time to fix things
 - Find all references to "Resources.Load" and replace them with "AssetManager.LoadAsset".
+- Find all references to "Resources.UnloadAsset" and comment them out
 - If ImUnityScrollUtility is giving you an error, just comment it out.
 5. Done!
 

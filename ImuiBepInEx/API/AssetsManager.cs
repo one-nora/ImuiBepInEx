@@ -7,7 +7,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ImuiBepInEx
+namespace ImuiBepInEx.API
 {
     internal static class AssetsManager
     {
@@ -68,7 +68,7 @@ namespace ImuiBepInEx
             if (go == null)
                 return null;
 
-            return UnityEngine.Object.Instantiate<T>(go);
+            return UnityEngine.Object.Instantiate(go);
         }
     }
 }

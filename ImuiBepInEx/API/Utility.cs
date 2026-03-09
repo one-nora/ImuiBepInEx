@@ -1,11 +1,11 @@
-﻿using Imui.IO.UGUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Imui.IO.UGUI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ImuiBepInEx
+namespace ImuiBepInEx.API
 {
     public static class Utility
     {
@@ -38,7 +38,7 @@ namespace ImuiBepInEx
         /// Creates a UI gameobject that streches to the limits of the canvas and contains a Imui backend component, thats necessary for rendering.
         /// </summary>
         /// <returns> The Imui backend of the created gameobject.</returns>
-        public static ImuiUnityGUIBackend CreateImuiObject(Transform parent = null)
+        public static ImuiUnityGUIBackend CreateImuiPanel(Transform parent = null)
         {
             var go = new GameObject("ImuiPanel");
             go.SetActive(false);
