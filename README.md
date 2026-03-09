@@ -26,7 +26,7 @@ First of all we need to set the paths.
 <PackageReference Include="UnityEngine.Modules" Version="2022.3.62">
 ```
 5. Replace the Version with your Unity game version (you can see this by right clicking and seeing the properties of the .exe located in the unity game folder)
-	5.1 You can see this by right clicking on the .exe located in the unity game folder, and click on Properties and details.
+- You can see this by right clicking on the .exe located in the unity game folder, and click on Properties and details.
 6. If your unity game version is much different than 2022.2 then go to
 ```
 <DefineConstants>ENABLE_INPUT_SYSTEM;UNITY_2022_2_OR_NEWER</DefineConstants>
@@ -83,7 +83,7 @@ If you want to update the assets, its the same as before, only that now instead 
 	4.1 On the inspector tab, after selecting an asset, on the bottom of it will appear a Asset Labels section
 	4.2 Click on the dropdown, click on new, and name the new Asset Label "imuiassetbundle"
 5. Once every asset has the same label, go to Window->Raw Asset Bundle Exporter 
-	5.1 If you don't see this tab, remember to add the "UnityAssets/Editor/RawBundleExporter.cs" script into "Assets/Editor"
+- If you don't see this tab, remember to add the "UnityAssets/Editor/RawBundleExporter.cs" script into "Assets/Editor"
 6. Write "imuiassetbundle" in bundles to build, then click on "Open export folder" and select the "ImuiBepInEx/Assets/" folder.
 5. Click on "Build raw asset bundles", once it finishes exporting go back to "ImuiBepInEx/Assets/"
 6. Remove any file that isnt named "ImuiAssetBundle", there should only remain 1 file.
