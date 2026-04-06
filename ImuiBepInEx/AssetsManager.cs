@@ -11,11 +11,14 @@ namespace ImuiBepInEx
 {
     internal static class AssetsManager
     {
-        private static AssetBundle? _bundle = null;
+        private static AssetBundle _bundle = null;
         public static bool AssetBundleLoaded = false;
 
-        public static void Initialize(Action onLoaded = null)
+        public static void Initialize(Action onLoad = null)
         {
+            if (_bundle != null || AssetBundleLoaded)
+                return;
+            
             Debug.Log("Loading Imui assets");
 
             byte[] data;
@@ -44,10 +47,23 @@ namespace ImuiBepInEx
             
             Debug.Log("Loaded Imui assets");
 
-            onLoaded?.Invoke();
+            onLoad?.Invoke();
         }
 
-        public static T? LoadAsset<T>(string assetName) where T : UnityEngine.Object
+        public static void Deinitialize(Action onDeload = null)
+        {
+            if (_bundle == null || !AssetBundleLoaded)
+                return;
+            
+            Debug.Log("Deloading Imui assets");
+            
+            _bundle.Unload(true);
+            AssetBundleLoaded = false;
+            
+            onDeload?.Invoke();
+        }
+
+        public static T LoadAsset<T>(string assetName) where T : UnityEngine.Object
         {
             if (_bundle == null)
                 return null;
@@ -59,7 +75,7 @@ namespace ImuiBepInEx
             return asset;
         }
 
-        public static T? LoadAndInstantiateAsset<T>(string assetName) where T : UnityEngine.Object
+        public static T LoadAndInstantiateAsset<T>(string assetName) where T : UnityEngine.Object
         {
             if (_bundle == null)
                 return null;

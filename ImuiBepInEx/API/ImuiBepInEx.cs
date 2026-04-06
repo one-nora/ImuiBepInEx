@@ -29,5 +29,10 @@ namespace ImuiBepInEx.API
 
             return backend.gameObject.AddComponent<T>();
         }
+
+        public static void Deinitialize(Action onAssetDeload = null)
+        {
+            AssetsManager.Deinitialize(onAssetDeload);
+        }
     }
 }
