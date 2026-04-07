@@ -12,8 +12,8 @@ namespace ImuiBepInEx.API
         /// <summary>
         /// Creates a canvas object that scales with the screen, it has no parent and is at the root of the hierarchy. 
         /// </summary>
-        /// <returns> The canvas gameobject.</returns>
-        public static GameObject CreateCanvasObject()
+        /// <returns> The canvas component.</returns>
+        public static Canvas CreateCanvas()
         {
             GameObject canvasGO = new GameObject("ImuiCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             Canvas canvas = canvasGO.GetComponent<Canvas>();
@@ -31,7 +31,7 @@ namespace ImuiBepInEx.API
             canvasGO.transform.SetParent(null);
             canvasGO.transform.SetSiblingIndex(0); // Move it to the first position among root objects
             
-            return canvasGO;
+            return canvas;
         }
 
         /// <summary>
