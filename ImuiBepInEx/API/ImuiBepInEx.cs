@@ -4,7 +4,7 @@ namespace ImuiBepInEx.API
 {
     public static class ImuiBepInExAPI
     {
-        public static ImuiPanel CreateImuiPanel<T>() where T : MonoBehaviour
+        public static ImuiPanel CreateImuiPanel()
         {
             var canvas = Utility.CreateCanvas();
             if (canvas == null)
@@ -13,8 +13,6 @@ namespace ImuiBepInEx.API
             var backend = Utility.CreateImuiPanel(canvas.transform);
             if (backend == null)
                 return null;
-            
-            backend.gameObject.AddComponent<T>();
             
             return new ImuiPanel(canvas, backend);
         }
